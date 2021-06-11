@@ -8,7 +8,7 @@ class Logger {
     addEntry(text) {
 
         this.entries.push(text);
-        return ++Logger.count;
+        return this.entries.length;
     }
 
     removeEntry(index) {
@@ -24,6 +24,14 @@ class Logger {
 class PersistenceManager {
     saveToFile(logger, filename) {
         fs.writeFileSync(filename, logger.toString());
+    }
+
+    load(filename) {
+        //
+    }
+
+    loadFromUrl(url) {
+        //
     }
 }
 
